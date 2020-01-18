@@ -20,12 +20,13 @@ This will create a new directory called bladeRF will all the files you will need
 ## Compile sources
 The bladeRF software uses cmake to manage the compile and install activities.
 
-> cd bladeRF/host/
-> mkdir build
-> cd build
-> cmake ../ -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/bladeRF -DINSTALL_UDEV_RULES=ON -DBLADERF_GROUP=bladerf
-> make -j4
-> sudo mkdir /opt/bladeRF
-> sudo chown <user> /opt/bladeRf   (optional step)
+> cd bladeRF/host/  
+> mkdir build   
+> cd build   
+> cmake ../ -CMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/bladeRF -DINSTALL_UDEV_RULES=ON -DBLADERF_GROUP=bladerf   
+> make -j4   
+> sudo mkdir /opt/bladeRF   
+> sudo chown <user> /opt/bladeRF  (optional step)   
+  
 
 
