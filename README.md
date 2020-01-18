@@ -8,12 +8,24 @@ Ubuntu packages to install as prerequisites:
 > sudo apt install python3-six python-six python-mako python3-lxml python-lxml python-numpy python3-numpy libusb-1.0-0-dev libusb-1.0-0 build-essential cmake libncurses5-dev libtecla1 libtecla-dev pkg-config git wget
 
 ## Get bladeRF sources
-pull the bladeRF sources to build host libraries and applications.
-I do this in a directory call sandbox I create in my home folder to doing builds.
-Do a git checkout of the bladeRF repository into your "sandbox" directory.
+pull the bladeRF sources to build host libraries and applications.   
+I do this in a directory call sandbox I create in my home folder to doing builds.   
+Do a git checkout of the bladeRF repository into your "sandbox" directory.   
 
 >cd /home/user/sandbox   
 >git clone https://github.com/Nuand/bladeRF
 
+This will create a new directory called bladeRF will all the files you will need.
+
 ## Compile sources
+The bladeRF software uses cmake to manage the compile and install activities.
+
+> cd bladeRF/host/
+> mkdir build
+> cd build
+> cmake ../ -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/bladeRF -DINSTALL_UDEV_RULES=ON -DBLADERF_GROUP=bladerf
+> make -j4
+> sudo mkdir /opt/bladeRF
+> sudo chown <user> /opt/bladeRf   (optional step)
+
 
