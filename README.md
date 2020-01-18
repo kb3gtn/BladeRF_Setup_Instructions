@@ -12,7 +12,7 @@ next we need to pull the bladeRF sources to build.
 I do this in a directory call sandbox I create in my home folder to doing builds.
 Then do a git checkout of the bladeRF repository.
 
->cd /home/<user>/sandbox
+>cd /home/user/sandbox   
 >git clone https://github.com/Nuand/bladeRF
 
 https://github.com/Nuand/bladeRFhttps://github.com/Nuand/bladeRF
