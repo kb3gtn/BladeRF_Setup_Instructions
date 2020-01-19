@@ -65,11 +65,13 @@ Download the hosted hostedxA4-latest.rbf (hostedxA9-latest.rbf for the bigger FP
 > mv bladeRF_fw_lastest.img bladeRF.img
 
 ## test it out
-Before things will work, you will probably need to logout and log backin.   
-when you log back in, connect up the BladeRF and running bladeRF-CLI -i.   
+Before things will work, you will probably need to logout and log back in.   
+when you log back in, connect up the BladeRF and try running "bladeRF-CLI -i".   
 It should load an FPGA image and give you a prompt.
 At the prompt type 'print' to get the SDR's configuration.
 
+
+End.
 
 
 
