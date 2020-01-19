@@ -37,3 +37,10 @@ Put the following into the file.
 > export PATH=$PATH:/opt/bladeRF/bin  
 > export BLADERF_SEARCH_DIR=/opt/bladeRF/etc
 
+## add bladeRF libraries to library search path
+create/edit /etc/ld.so.conf.d/bladeRF.conf  
+> sudo vim /etc/ld.so.conf.d/bladeRF.conf   
+
+And insert the following text:  
+> /opt/bladeRF/lib   
+
