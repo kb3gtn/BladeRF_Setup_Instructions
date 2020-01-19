@@ -26,11 +26,16 @@ The bladeRF software uses cmake to manage the compile and install activities.
 > cmake ../ -CMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/bladeRF -DINSTALL_UDEV_RULES=ON -DBLADERF_GROUP=bladerf   
 > make -j4   
 > sudo mkdir /opt/bladeRF   
-> sudo chown <user> /opt/bladeRF  (optional step)   
+> sudo chown <user> /opt/bladeRF  (optional step)
+ 
+## create bladerf group
+create a bladerf group and add users to it so they can access the bladeRF.
+
+> groupadd bladerf
+> usermod -a -G bladerf username
   
 ## Add bladeRF to system path
 create a new file in /etc/profile.d/bladeRF_paths.sh
-
 > sudo vim /etc/profile.d/bladeRF_paths.sh
 
 Put the following into the file.
