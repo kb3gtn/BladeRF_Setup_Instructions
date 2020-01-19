@@ -44,6 +44,8 @@ create a new file in /etc/profile.d/bladeRF_paths.sh
 Put the following into the file.
 > export PATH=$PATH:/opt/bladeRF/bin  
 > export BLADERF_SEARCH_DIR=/opt/bladeRF/etc
+> export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/bladeRF/lib/pkgconfig
+
 
 ## add bladeRF libraries to library search path
 create/edit /etc/ld.so.conf.d/bladeRF.conf  
