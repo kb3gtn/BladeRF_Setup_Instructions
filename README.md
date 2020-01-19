@@ -49,3 +49,29 @@ create/edit /etc/ld.so.conf.d/bladeRF.conf
 And insert the following text:  
 > /opt/bladeRF/lib   
 
+## BladeRF firmware auto-loading
+When the bladeRF host software is started it will load a FPGA image into the bladeRF to initialize it if it is not already initialized.  The bladeRF.conf file contains bladeRF-CLI commands.
+
+make a directory to store these images.  I use /opt/bladeRF/etc.
+> mkdir /opt/bladeRF/etc
+> cd /opt/bladeRF/etc
+
+The fpga and fx3 firmware images can be downloaded at: https://www.nuand.com/fpga_images/  
+Download the hosted hostedxA4-latest.rbf (hostedxA9-latest.rbf for the bigger FPGA version)
+
+> wget "https://www.nuand.com/fpga/hostedxA4-latest.rbf"
+> mv hostedxA4-latest.rbf hostedxA4.rbf
+> wget "https://www.nuand.com/fx3/bladeRF_fw_latest.img"
+> mv bladeRF_fw_lastest.img bladeRF.img
+
+## test it out
+Before things will work, you will probably need to logout and log backin.   
+when you log back in, connect up the BladeRF and running bladeRF-CLI -i.   
+It should load an FPGA image and give you a prompt.
+At the prompt type 'print' to get the SDR's configuration.
+
+
+
+
+
+
