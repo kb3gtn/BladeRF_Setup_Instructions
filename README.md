@@ -1,3 +1,5 @@
+![NUAND LOGO](http://nuand.com/bladeRF-doc/libbladeRF/v2.2.1/logo.png)
+
 # Nuand BladeRF2 Setup Instructions for Ubuntu 20.04 
 
 ## Description of setup
