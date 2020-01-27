@@ -55,7 +55,7 @@ And insert the following text:
 > /opt/bladeRF/lib   
 
 ## BladeRF firmware auto-loading
-When the bladeRF host software is started it will load a FPGA image into the bladeRF to initialize it if it is not already initialized.  The bladeRF.conf file contains bladeRF-CLI commands.
+When the bladeRF host software is started it will load a FPGA image into the bladeRF to initialize it if it is not already initialized.  The directory specified by the enviroment variable BLADERF_SEARCH_DIR.  The bladeRF host software will look in this directory for the FPGA images to load.   Also if a bladeRF.conf file is defined, the commands from the bladeRF command will be executed when the bladeRF devie is openned by a application.
 
 make a directory to store these images.  I use /opt/bladeRF/etc.
 > mkdir /opt/bladeRF/etc   
