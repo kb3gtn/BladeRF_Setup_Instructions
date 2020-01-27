@@ -34,8 +34,8 @@ The bladeRF software uses cmake to manage the compile and install activities.
 ## create bladerf group
 create a bladerf group and add users to it so they can access the bladeRF.
 
-> $ groupadd bladerf
-> $ usermod -a -G bladerf username
+> $ groupadd bladerf   
+> $ usermod -a -G bladerf username   
   
 ## Add bladeRF to system path
 create a new file in /etc/profile.d/bladeRF_paths.sh
