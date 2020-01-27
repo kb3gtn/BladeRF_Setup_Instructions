@@ -7,7 +7,7 @@ These instructions assume ubuntu 20.04 (but will work on others distros) and wil
 
 ## Install the dependencies
 Ubuntu packages to install as prerequisites:   
-> sudo apt install python3-six python-six python-mako python3-lxml python-lxml python-numpy python3-numpy libusb-1.0-0-dev libusb-1.0-0 build-essential cmake libncurses5-dev libtecla1 libtecla-dev pkg-config git wget
+> $ sudo apt install python3-six python-six python-mako python3-lxml python-lxml python-numpy python3-numpy libusb-1.0-0-dev libusb-1.0-0 build-essential cmake libncurses5-dev libtecla1 libtecla-dev pkg-config git wget
 
 ## Get bladeRF sources
 pull the bladeRF sources to build host libraries and applications.     
