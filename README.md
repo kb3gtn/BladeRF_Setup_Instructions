@@ -3,7 +3,7 @@
 # Nuand BladeRF2 Setup Instructions for Ubuntu 20.04 
 
 ## Description of setup
-These instructions assume ubuntu 20.04 (but will work on others distros) and will walk through how to install the bladeRF host software confined to /opt/bladeRf with user group bladerf allowed to access the devices with out root permissions.
+These instructions assume ubuntu 20.04 (but will work on others distros) and will walk through how to install the bladeRF host software confined to /opt/bladeRf with user group bladerf allowed to access the devices without root permissions.
 
 ## Install the dependencies
 Ubuntu packages to install as prerequisites:   
@@ -66,6 +66,8 @@ Download the hosted hostedxA4-latest.rbf (hostedxA9-latest.rbf for the bigger FP
 
 > wget "https://www.nuand.com/fpga/hostedxA4-latest.rbf"   
 > mv hostedxA4-latest.rbf hostedxA4.rbf   
+> wget "https://www.nuand.com/fpga/hostedxA9-latest.rbf"   
+> mv hostedxA4-latest.rbf hostedxA9.rbf   
 > wget "https://www.nuand.com/fx3/bladeRF_fw_latest.img"   
 > mv bladeRF_fw_lastest.img bladeRF.img   
 
