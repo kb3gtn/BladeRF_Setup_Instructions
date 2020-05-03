@@ -57,10 +57,10 @@ And insert the following text:
 ## udev rules for bladeRF
 create/edit /etc/udev/rules.d/88-nuand-bladerf.rules    
 put the following into this file:    
-    # Nuand bladeRF   
-    ATTR{idVendor}=="2cf0", ATTR{idProduct}=="5246", MODE="660", GROUP="bladerf"   
-    # Nuand bladeRF, legacy VID/PID   
-    ATTR{idVendor}=="1d50", ATTR{idProduct}=="6066", MODE="660", GROUP="bladerf"   
+>\# Nuand bladeRF   
+>ATTR{idVendor}=="2cf0", ATTR{idProduct}=="5246", MODE="660", GROUP="bladerf"   
+>\# Nuand bladeRF, legacy VID/PID   
+>ATTR{idVendor}=="1d50", ATTR{idProduct}=="6066", MODE="660", GROUP="bladerf"   
 
 
 ## BladeRF firmware auto-loading
