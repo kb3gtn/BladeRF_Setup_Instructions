@@ -25,7 +25,7 @@ The bladeRF software uses cmake to manage the compile and install activities.
 > $ cd bladeRF/host/  
 > $ mkdir build   
 > $ cd build   
-> $ cmake ../ -CMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/bladeRF -DINSTALL_UDEV_RULES=ON -DBLADERF_GROUP=bladerf   
+> $ cmake ../ -CMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/bladeRF -DBLADERF_GROUP=bladerf   
 > $ make -j4   
 > $ sudo mkdir /opt/bladeRF   
 > $ sudo make install  
@@ -37,12 +37,12 @@ create a bladerf group and add users to it so they can access the bladeRF.
 > $ groupadd bladerf   
 > $ usermod -a -G bladerf username   
   
-## Add bladeRF to system path
-create a new file in /etc/profile.d/bladeRF_paths.sh
-> $ sudo vim /etc/profile.d/bladeRF_paths.sh
+## Add bladeRF to system path  
+create a new file in /etc/profile.d/bladeRF_paths.sh  
+> $ sudo vim /etc/profile.d/bladeRF_paths.sh  
 
-Put the following into the file.
-> $ export PATH=$PATH:/opt/bladeRF/bin  
+Put the following into the file.   
+> $ export PATH=$PATH:/opt/bladeRF/bin   
 > $ export BLADERF_SEARCH_DIR=/opt/bladeRF/etc   
 > $ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/bladeRF/lib/pkgconfig   
 
@@ -54,15 +54,23 @@ create/edit /etc/ld.so.conf.d/bladeRF.conf
 And insert the following text:  
 > /opt/bladeRF/lib   
 
+## udev rules for bladeRF
+create/edit /etc/udev/rules.d/88-nuand-bladerf.rules
+put the following into this file:
+># Nuand bladeRF   
+> ATTR{idVendor}=="2cf0", ATTR{idProduct}=="5246", MODE="660", GROUP="bladerf"   
+># Nuand bladeRF, legacy VID/PID   
+>ATTR{idVendor}=="1d50", ATTR{idProduct}=="6066", MODE="660", GROUP="bladerf"   
+
 ## BladeRF firmware auto-loading
 When the bladeRF host software is started it will load a FPGA image into the bladeRF to initialize it if it is not already initialized.  The directory specified by the enviroment variable BLADERF_SEARCH_DIR is as the base directory to search for .rbf files to load.  The bladeRF host software will look in this directory for the FPGA images to load.   Also if a bladeRF.conf file is defined, the commands from the bladeRF command will be executed when the bladeRF devie is openned by a application.
 
-make a directory to store these images.  I use /opt/bladeRF/etc.
+make a directory to store these images.  I use /opt/bladeRF/etc.   
 > mkdir /opt/bladeRF/etc   
 > cd /opt/bladeRF/etc   
 
-The fpga and fx3 firmware images can be downloaded at: https://www.nuand.com/fpga_images/  
-Download the hosted hostedxA4-latest.rbf (hostedxA9-latest.rbf for the bigger FPGA version)
+The fpga and fx3 firmware images can be downloaded at: https://www.nuand.com/fpga_images/   
+Download the hosted hostedxA4-latest.rbf (hostedxA9-latest.rbf for the bigger FPGA version)   
 
 > wget "https://www.nuand.com/fpga/hostedxA4-latest.rbf"   
 > mv hostedxA4-latest.rbf hostedxA4.rbf   
@@ -74,8 +82,8 @@ Download the hosted hostedxA4-latest.rbf (hostedxA9-latest.rbf for the bigger FP
 ## test it out
 Before things will work, you will probably need to logout and log back in.   
 when you log back in, connect up the BladeRF and try running "bladeRF-CLI -i".   
-It should load an FPGA image and give you a prompt.
-At the prompt type 'print' to get the SDR's configuration.
+It should load an FPGA image and give you a prompt.   
+At the prompt type 'print' to get the SDR's configuration.   
 
 
 End.
