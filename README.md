@@ -55,12 +55,13 @@ And insert the following text:
 > /opt/bladeRF/lib   
 
 ## udev rules for bladeRF
-create/edit /etc/udev/rules.d/88-nuand-bladerf.rules
-put the following into this file:
-># Nuand bladeRF   
-> ATTR{idVendor}=="2cf0", ATTR{idProduct}=="5246", MODE="660", GROUP="bladerf"   
-># Nuand bladeRF, legacy VID/PID   
->ATTR{idVendor}=="1d50", ATTR{idProduct}=="6066", MODE="660", GROUP="bladerf"   
+create/edit /etc/udev/rules.d/88-nuand-bladerf.rules    
+put the following into this file:    
+    # Nuand bladeRF   
+    ATTR{idVendor}=="2cf0", ATTR{idProduct}=="5246", MODE="660", GROUP="bladerf"   
+    # Nuand bladeRF, legacy VID/PID   
+    ATTR{idVendor}=="1d50", ATTR{idProduct}=="6066", MODE="660", GROUP="bladerf"   
+
 
 ## BladeRF firmware auto-loading
 When the bladeRF host software is started it will load a FPGA image into the bladeRF to initialize it if it is not already initialized.  The directory specified by the enviroment variable BLADERF_SEARCH_DIR is as the base directory to search for .rbf files to load.  The bladeRF host software will look in this directory for the FPGA images to load.   Also if a bladeRF.conf file is defined, the commands from the bladeRF command will be executed when the bladeRF devie is openned by a application.
