@@ -54,6 +54,8 @@ create/edit /etc/ld.so.conf.d/bladeRF.conf
 And insert the following text:  
 > /opt/bladeRF/lib   
 
+Then run 'sudo ldconfig' to update library cache.
+
 ## udev rules for bladeRF
 create/edit /etc/udev/rules.d/88-nuand-bladerf.rules    
 put the following into this file:    
