@@ -74,9 +74,9 @@ echo "------------------------------------------------"
 # create bladerf_paths.sh for profile.d .. 
 echo "* Create bladeRF_path.sh in /etc/profile.d/bladeRF_path.sh"
 cat >/etc/profile.d/bladeRF_paths.sh <<EOF
-export PATH=$PATH:/opt/bladeRF/bin
+export PATH=\$PATH:/opt/bladeRF/bin
 export BLADERF_SEARCH_DIR=/opt/bladeRF/etc
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/bladeRF/lib/pkgconfig
+export PKG_CONFIG_PATH=\$PKG_CONFIG_PATH:/opt/bladeRF/lib/pkgconfig
 EOF
 
 # Add bladeRF libraries to library search path
